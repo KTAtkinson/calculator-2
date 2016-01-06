@@ -8,9 +8,8 @@ calculator program yourself in this file.
 from arithmetic import *
 
 def calculator():
-    answer = None
-    # repeat forever:
     while True:
+        answer = None
         #     read input
         math = raw_input(">")
         #     tokenize input
@@ -20,7 +19,6 @@ def calculator():
         #     if the first token is 'q', quit
         if operator == "q":
             break
-        #     otherwise decide which math function to call based on the tokens we read
         elif operator == "+":
             answer = add(int(tokens[0]), int(tokens[1]))
         elif operator == "-":
@@ -42,7 +40,6 @@ def calculator():
 
         if answer:
             print answer
-            answer = None
 
 
 calculator()
