@@ -22,26 +22,27 @@ def calculator():
             break
         #     otherwise decide which math function to call based on the tokens we read
         elif operator == "+":
-            answer = add(tokens[0], tokens[1])
+            answer = add(int(tokens[0]), int(tokens[1]))
         elif operator == "-":
-            answer = subtract(tokens[0], tokens[1])
+            answer = subtract(int(tokens[0]), int(tokens[1]))
         elif operator == "*":
-            answer = multiply(tokens[0], tokens[1])
+            answer = multiply(int(tokens[0]), int(tokens[1]))
         elif operator == "/":
-            answer = divide(tokens[0], tokens[1])
+            answer = divide(int(tokens[0]), int(tokens[1]))
         elif operator == "%":
-            answer = mod(tokens[0], tokens[1])
+            answer = mod(int(tokens[0]), int(tokens[1]))
         elif operator == "cube":
-            answer = cube(tokens[0], tokens[1])
+            answer = cube(int(tokens[0]))
         elif operator == "pow":
-            answer = power(tokens[0], tokens[1])
+            answer = power(int(tokens[0]), int(tokens[1]))
         elif operator == "square":
-            answer = square(tokens[0], tokens[1])
+            answer = square(int(tokens[0]))
         else:
             print "I don't understand."
 
         if answer:
             print answer
+            answer = None
 
 
 calculator()
