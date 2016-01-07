@@ -83,7 +83,6 @@ def mod(nums):
 
 def check_if_too_few_numbers(nums, expected_number):
     if len(nums) < expected_number:
-        print "You provided too few numbers."
         return True
 
     return False
