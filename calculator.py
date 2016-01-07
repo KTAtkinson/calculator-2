@@ -35,14 +35,20 @@ def calculator():
             answer = multiply(get_int_list(tokens))
         elif operator == "/":
             answer = divide(get_int_list(tokens))
-        elif operator == "%":
-            answer = mod(int(tokens[0]), int(tokens[1]))
+        elif operator == "mod":
+            answer = mod(get_int_list(tokens))
         elif operator == "cube":
-            answer = cube(int(tokens[0]))
+            if len(tokens) != 1:
+                print "Only one number can be processed."
+            else:
+                answer = cube(int(tokens[0]))
         elif operator == "pow":
-            answer = power(int(tokens[0]), int(tokens[1]))
+            answer = power(get_int_list(tokens))
         elif operator == "square":
-            answer = square(int(tokens[0]))
+            if len(tokens) != 1:
+                print "Only one number can be processed."
+            else:
+                answer = square(int(tokens[0]))
         else:
             print "I don't understand."
 
