@@ -5,9 +5,17 @@ Using our arithmetic.py file from Exercise02, create the
 calculator program yourself in this file.
 """
 
-from arithmetic import *
+from fancy_arithmetic import *
+
+def get_int_list(str_list):
+    int_list = []
+
+    for element in str_list:
+        int_list.append(int(element))
+    return int_list
 
 def calculator():
+
     while True:
         answer = None
         #     read input
@@ -20,13 +28,13 @@ def calculator():
         if operator == "q":
             break
         elif operator == "+":
-            answer = add(int(tokens[0]), int(tokens[1]))
+            answer = add(get_int_list(tokens))
         elif operator == "-":
-            answer = subtract(int(tokens[0]), int(tokens[1]))
+            answer = subtract(get_int_list(tokens))
         elif operator == "*":
-            answer = multiply(int(tokens[0]), int(tokens[1]))
+            answer = multiply(get_int_list(tokens))
         elif operator == "/":
-            answer = divide(int(tokens[0]), int(tokens[1]))
+            answer = divide(get_int_list(tokens))
         elif operator == "%":
             answer = mod(int(tokens[0]), int(tokens[1]))
         elif operator == "cube":
