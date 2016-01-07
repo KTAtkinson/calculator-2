@@ -11,11 +11,16 @@ def get_int_list(str_list):
     int_list = []
 
     for element in str_list:
-        int_list.append(int(element))
+        try:
+            int_list.append(int(element))
+        except ValueError:
+            print "{} is not a number.".format(element)
+            return []
+
     return int_list
 
-def calculator():
 
+def calculator():
     while True:
         answer = None
         #     read input
